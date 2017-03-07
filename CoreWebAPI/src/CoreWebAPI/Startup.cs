@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using CoreWebApplication.Models;
+using CoreWebAPI.Models;
 
-namespace CoreWebApplication
+namespace CoreWebAPI
 {
     public class Startup
     {

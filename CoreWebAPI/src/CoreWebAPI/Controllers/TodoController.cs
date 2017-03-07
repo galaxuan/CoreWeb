@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CoreWebApplication.Models;
+using CoreWebAPI.Models;
 
-namespace CoreWebApplication.Controllers
+namespace CoreWebAPI.Controllers
 {
     [Route("api/[controller]")]
     public class TodoController : Controller
@@ -41,6 +41,30 @@ namespace CoreWebApplication.Controllers
             }
             TodoItems.Add(item);
             return CreatedAtRoute("GetTodo", new { controller = "Todo", id = item.Key }, item);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(string id, [FromBody] TodoItem item)
+        {
+            if (item == null || item.Key != id)
+            {
+                return BadRequest();
+            }
+
+            var todo = TodoItems.Find(id);
+            if (todo == null)
+            {
+                return NotFound();
+            }
+
+            TodoItems.Update(item);
+            return new NoContentResult();
+        }
+
+        [HttpDelete("{id}")]
+        public void Delete(string id)
+        {
+            TodoItems.Remove(id);
         }
     }
 }

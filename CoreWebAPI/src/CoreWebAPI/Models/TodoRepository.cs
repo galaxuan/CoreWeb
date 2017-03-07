@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 
-namespace CoreWebApplication.Models
+namespace CoreWebAPI.Models
 {
     public class TodoRepository : ITodoRepository
     {

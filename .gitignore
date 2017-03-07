@@ -1,1 +1,4 @@
 /CoreWebApplication/.vs
+/CoreWebAPI/.vs
+/CoreWebAPI/src/CoreWebAPI/bin
+/CoreWebAPI/src/CoreWebAPI/obj
