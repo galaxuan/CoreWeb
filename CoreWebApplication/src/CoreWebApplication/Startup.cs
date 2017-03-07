@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using CoreWebApplication.Models;
 
 namespace CoreWebApplication
 {
@@ -38,6 +39,8 @@ namespace CoreWebApplication
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
+            // Add our repository type，下行高亮
+            services.AddSingleton<ITodoRepository, TodoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
